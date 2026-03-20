@@ -330,6 +330,10 @@ float applyThrottleCurve(float normalizedInput) {
       // More aggressive at high throttle, gentle at low throttle
       output = (normalizedInput * normalizedInput) / 100.0;
       break;
+
+    case CURVE_SQUIRT:
+      output = sqrt(normalizedInput * 100);
+      break;
       
     case CURVE_LOGARITHMIC:
       // Logarithmic curve: more responsive at low throttle

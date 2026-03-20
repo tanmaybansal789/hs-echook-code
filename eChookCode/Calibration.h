@@ -59,19 +59,20 @@ float CAL_THERM2_C = -0.0000004630785404;
 int CAL_THROTTLE_OUTPUT_EN = 1;
 int CAL_THROTTLE_VARIABLE = 1; // 1 for a variable throttle, 0 for a push button (on/off) throttle.
 int CAL_THROTTLE_RAMP = 1; // 1 to enable. A simple implementation of a throttle ramp up
-int CAL_THROTTLE_LOW = 1; // This voltage and below is regarded as 0% throttle
-int CAL_THROTTLE_HIGH = 4; // This voltage and above is regarded as 100% throttle
+float CAL_THROTTLE_LOW = 0.1; // This voltage and below is regarded as 0% throttle
+float CAL_THROTTLE_HIGH = 4.0; // This voltage and above is regarded as 100% throttle
 
 enum {
   CURVE_LINEAR,
   CURVE_EXPONENTIAL,
+  CURVE_SQUIRT,
   CURVE_LOGARITHMIC,
   CURVE_S_CURVE,
   CURVE_CUSTOM_LUT
-} CAL_ACTIVE_THROTTLE_CURVE = CURVE_CUSTOM_LUT;
+} CAL_ACTIVE_THROTTLE_CURVE = CURVE_SQUIRT;
 
 float CAL_CUSTOM_CURVE_LUT[11] = {
-  0.0, 2.0, 4.0, 6.0, 8.0, 10.0, 12.0, 14.0, 16.0, 18.0, 20.0
+  0.0, 80.0, 82.22222222222223, 84.44444444444444, 86.66666666666667, 88.88888888888889, 91.11111111111111, 93.33333333333333, 95.55555555555556, 97.77777777777777, 100.0
 };
 
 // _______________________________________________________________

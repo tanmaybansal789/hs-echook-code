@@ -13,7 +13,7 @@
  */
 
 //If you intend to use the online configuration/calibration tool, set this to 0, to use these hard coded settings, set it to 1
-uint8_t FORCE_USE_HARDCODED_CAL = 0;
+uint8_t FORCE_USE_HARDCODED_CAL = 1;
 
 uint8_t CAL_USE_EEPROM = 1;
 
@@ -58,9 +58,9 @@ float CAL_THERM2_C = -0.0000004630785404;
 //Throttle calibrations
 int CAL_THROTTLE_OUTPUT_EN = 1;
 int CAL_THROTTLE_VARIABLE = 1; // 1 for a variable throttle, 0 for a push button (on/off) throttle.
-int CAL_THROTTLE_RAMP = 1; // 1 to enable. A simple implementation of a throttle ramp up
-float CAL_THROTTLE_LOW = 0.1; // This voltage and below is regarded as 0% throttle
-float CAL_THROTTLE_HIGH = 4.0; // This voltage and above is regarded as 100% throttle
+int CAL_THROTTLE_RAMP = 0; // 1 to enable. A simple implementation of a throttle ramp up
+float CAL_THROTTLE_LOW = 1.0; // This voltage and below is regarded as 0% throttle
+float CAL_THROTTLE_HIGH = 2.85; // This voltage and above is regarded as 100% throttle
 
 enum {
   CURVE_LINEAR,
